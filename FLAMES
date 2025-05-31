@@ -1,0 +1,18 @@
+Bname=input("Enter boy name:")
+Gname=input("Enter girl name:")
+Bl=list(Bname)
+Gl=list(Gname)
+for i in range(0,len(Bl)):
+    for j in range(0,len(Gl)):
+        if Bl[i]==Gl[j]:
+            Bl[i]='2'
+            Gl[j]='2'
+a=len(Bl)-Bl.count('2')
+b=len(Gl)-Gl.count('2')
+total=a+b
+res=["Friends","Love","Affection","Marriage","Enemy","sisters"]
+f=0
+while(len(res)>1):
+    f=(f+(total-1))%len(res)
+    res.pop(f)
+print(res)
