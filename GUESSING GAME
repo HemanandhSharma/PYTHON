@@ -1,0 +1,57 @@
+import random
+p1=input("Enter player 1 name:")
+p2=input("Enter player 2 name:")
+print("hello,{} and {} .Lets play a game".format(p1,p2))
+print("this is a game of luck among two players")
+print("and lets check your luck")
+cnum=[]
+while(len(cnum)!=5):
+    a=random.randint(1,10)
+    if a not in cnum:
+        cnum.append(a)
+p1num=[]
+p2num=[]
+p1s=0
+p2s=0
+for i in range(3):
+    print("{} turn".format(p1))
+    num=int(input())
+    while True:
+        if num not in p1num or  p2num:
+            p1num.append(num)
+            if num in cnum:
+                print("correct guess and you scored a point")
+                p1s=p1s+1
+                break
+            else:
+                print("wrong guess,better luck next time")
+                break
+        else:
+            print("player has entered alredy chosen guess")
+            num=int(input("enter another guess:"))
+            continue
+    print("{} turn".format(p2))
+    num=int(input())
+    while True:
+        if num not in p1num or p2num:
+            p2num.append(num)
+            if num in cnum:
+                print("correct guess and you scored a point")
+                p2s=p2s+1
+                break
+            else:
+                print("wrong guess,better luck next time")
+                break
+        else:
+            print("player has entered alredy chosen guess")
+            num=int(input("enter another guess:"))
+            continue
+print("computer numbers",cnum)
+print("{} has guessed {} and scored {} point".format(p1,p1num,p1s))
+print("{} has guessed {} and scored {} point".format(p2,p2num,p2s))
+if p1s>p2s:
+    print("{} is the winner".format(p1))
+elif p2s>p1s:
+    print("{} is the winner".format(p2))
+else:
+    print("match tie")
