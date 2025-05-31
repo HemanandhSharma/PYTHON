@@ -16,36 +16,26 @@ p2s=0
 for i in range(3):
     print("{} turn".format(p1))
     num=int(input())
-    while True:
-        if num not in p1num or  p2num:
-            p1num.append(num)
-            if num in cnum:
-                print("correct guess and you scored a point")
-                p1s=p1s+1
-                break
-            else:
-                print("wrong guess,better luck next time")
-                break
-        else:
-            print("player has entered alredy chosen guess")
-            num=int(input("enter another guess:"))
-            continue
+    while num in p1num or num in p2num:
+        print("player has entered alredy chosen guess")
+        num=int(input("enter another guess:"))
+    p1num.append(num)
+    if num in cnum:
+        print("correct guess and you scored a point")
+        p1s=p1s+1
+    else:
+        print("wrong guess,better luck next time ")
     print("{} turn".format(p2))
     num=int(input())
-    while True:
-        if num not in p1num or p2num:
-            p2num.append(num)
-            if num in cnum:
-                print("correct guess and you scored a point")
-                p2s=p2s+1
-                break
-            else:
-                print("wrong guess,better luck next time")
-                break
-        else:
-            print("player has entered alredy chosen guess")
-            num=int(input("enter another guess:"))
-            continue
+    while num in p1num or num in p2num:
+        print("player has entered alredy chosen guess")
+        num=int(input("enter another guess:"))
+    p2num.append(num)
+    if num in cnum:
+        print("correct guess and you scored a point")
+        p2s=p2s+1
+    else:
+        print("wrong guess,better luck next time ")
 print("computer numbers",cnum)
 print("{} has guessed {} and scored {} point".format(p1,p1num,p1s))
 print("{} has guessed {} and scored {} point".format(p2,p2num,p2s))
