@@ -1,0 +1,27 @@
+def calc_percent(person):
+   tot_marks=sum(person["marks"])
+   return (tot_marks/5)
+
+a=[{"name":"ram","age":23,"marks":[67,75,75,86,57]},
+{"name":"ram","age":23,"marks":[78,99,87,76,65]},
+{"name":"ram","age":23,"marks":[68,76,98,66,87]},
+{"name":"ram","age":23,"marks":[56,88,76,56,86]},
+{"name":"ram","age":23,"marks":[89,76,87,56,98]}]
+
+b=sorted(a,key=calc_percent,reverse=True)
+
+pos=1
+for i in b:
+   if pos==1:
+      des="First"
+   elif pos==2:
+      des="Second"
+   elif pos==3:
+      des="Third"
+   elif pos==4:
+      des="Fourth"
+   elif pos==5:
+      des="Fifth"
+   percentage=calc_percent(i)
+   print("{} with percentage of {:2f}% stands {} position".format(i["name"],percentage,des))
+   pos=pos+1
