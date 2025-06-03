@@ -1,0 +1,5 @@
+a=[{"name":"raju","age":19,"marks":[45,60,75,57,78]},
+{"name":"rose","age":20,"marks":[78,67,54,65,87]},
+{"name":"jack","age":18,"marks":[73,97,56,75,47]}]
+for i in range(len(a)):
+   print(sum(a[i]["marks"]))
