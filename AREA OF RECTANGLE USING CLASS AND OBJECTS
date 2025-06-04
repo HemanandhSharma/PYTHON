@@ -1,0 +1,21 @@
+class rect:
+    def set_dim(self,a,b):
+        self.a=a
+        self.b=b
+    def area(self):
+        print("area is",self.a*self.b)
+    def peri(self):
+        print("perimeter is",2*(self.a+self.b))
+l=[]
+n=int(input("Enter the number of rectangles:"))
+for i in range(n):
+    r=rect()
+    a=int(input("Enter the length of rectangle {}:".format(i+1)))
+    b=int(input("Enter the breadth of rectangle {}:".format(i+1)))    
+    r.set_dim(a,b)
+    l.append(r)
+for i in range(n):
+    print("RECTANGLE-{}".format(i+1))
+    l[i].area()
+    l[i].peri()
+    print("------------------")
