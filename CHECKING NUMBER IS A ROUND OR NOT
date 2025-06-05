@@ -1,0 +1,10 @@
+def isround(a):
+    lst=[]
+    while a!=1:
+        lst.append(a)
+        a=sum([int(i)*int(i) for i in str(a)])
+        if a in lst:
+            return False
+    return True
+print(isround(68))
+print(isround(4))
