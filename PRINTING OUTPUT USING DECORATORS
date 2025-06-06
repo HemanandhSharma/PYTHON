@@ -1,0 +1,10 @@
+def dec1(org_func):
+    def wrapper():
+        print("======================")
+        org_func()
+        print("***********************")
+    return wrapper
+@dec1
+def abc():
+    print("Hello!")
+abc()
