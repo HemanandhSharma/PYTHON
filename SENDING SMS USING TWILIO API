@@ -1,0 +1,12 @@
+from twilio.rest import Client
+account_sid = "<KEY>"
+auth_token = "<PASSWORD>"
+twilio_number = "<twilio number>"
+client = Client(account_sid, auth_token)
+target_number ="receiver_number"
+message = client.messages.create(
+body="hii da how are you ",
+from_=twilio_number,
+to=target_number
+)
+print("Message sent to number")
